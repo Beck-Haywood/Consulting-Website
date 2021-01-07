@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import '../../public/Contact/index.css'
 import axios from 'axios'
+
 export default function Contact() {
     const [name, changeName] = useState('')
     const [email, changeEmail] = useState('')
@@ -20,7 +21,7 @@ export default function Contact() {
         e.preventDefault();
         axios({
           method: "POST", 
-          url:"http://localhost:9000/send", 
+          url:"http://localhost:5000/send", 
           data:  {name, email, msg}
         }).then((res) =>{
             changeStatus('Sent!')
