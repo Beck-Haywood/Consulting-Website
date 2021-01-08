@@ -77,7 +77,7 @@ app.post('/send', async (req, res, next) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/massage-website/public/index.js'))
+  res.sendFile(path.join(__dirname+'/massage-website/src/index.js'))
 });
 // app.use("/send", nodemailer);
 // catch 404 and forward to error handler
