@@ -30,10 +30,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/testBackend", testBackendRoute);
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/massage-website/public/index.html'))
-});
-
 app.post('/send', async (req, res, next) => {
   console.log(req.body)
   // console.log(res)
@@ -79,6 +75,10 @@ app.post('/send', async (req, res, next) => {
   })
   smtpTransport.close();
 })
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/massage-website/public/index.js'))
+});
 // app.use("/send", nodemailer);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
